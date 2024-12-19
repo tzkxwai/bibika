@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Убираем скроллинг */
+    background-color: #7a6c6c; /* Светло-серый фон */
+  }
+  
+  .car {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(139, 0, 151);
+    position: relative;
+    animation: moveCar 5s ease-in-out forwards; /* Анимация движения */
+  }
+  
+  .car::before {
+    content: "";
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    margin-left: 80px;
+    width: 30px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+  }
+  
+  .car::after {
+    content: "";
+    position: absolute;
+    top: 70%;
+    right: 50%;
+    margin-left: 600px;
+    width: 30px;
+    height: 20px;
+    background-color: black;
+    border-radius: 5px;
+  }
+  
+  .wheel {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 10px;
+  }
+  
+  .wheel.left {
+    left: 20px;
+    top: 90px;
+  }
+  
+  .wheel.right {
+    right: 20px;
+    top: 90px;
+  }
+  
+  
+  @keyframes moveCar {
+    0% {
+      left: -200px; /* Начальное положение вне экрана */
+    }
+    100% {
+      left: calc(100vw - 250px); /* Конечное положение */
+    }
+  }
+  
